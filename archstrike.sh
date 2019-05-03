@@ -15,10 +15,12 @@ pacman -Syy
 pacman -Sl archstrike
 echo "Script has finished adding the repos, arch strike is in your mirrors, proof ^^^^^"
 while true; do
-	read -p "Do you want to install all pentesting tools?" yn 
+	read -p "Do you want to install all pentesting tools? [Y/n]" yn 
 	case $yn in
-		[Yy]* ) pacman -S burpsuite; break;;
+		[Yy]* ) pacman -S metasploit dirb dirbuster gobuster nmap masscan openvpn nikto sqlmap aircrack-ng hydra john tmux netcat wireshark-qt hashcat macchanger firefox neofetch gtop; break;;
 		[Nn]* ) exit;;
 		* ) echo "[Y/n]";;
 	esac
 done
+echo "Installtion finished. Good luck"
+neofetch | grep "Packages"
